@@ -1,0 +1,4 @@
+rootProject.name = 'multi-project-test'
+
+include 'modular-monoliths'
+include 'common', 'auth', 'order'
