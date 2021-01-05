@@ -58,45 +58,15 @@ subprojects {
     }
 }
 
-project(':common') {
-    dependencies {
-        compile 'org.springframework:spring-context'
-        compile 'org.springframework:spring-context-support'
-    }
-}
-
-project(':auth') {
-    dependencies {
-        compile project(':common')
-
-        compile 'org.springframework.boot:spring-boot-starter-web'
-
-        testImplementation('org.springframework.boot:spring-boot-starter-test') {
-            exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-        }
-        testImplementation 'org.springframework.security:spring-security-test'
-    }
-}
-
-project(':order') {
-    dependencies {
-        compile project(':common')
-
-        compile 'org.springframework.boot:spring-boot-starter-web'
-
-        testImplementation('org.springframework.boot:spring-boot-starter-test') {
-            exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-        }
-        testImplementation 'org.springframework.security:spring-security-test'
-    }
-}
-
-project(':modular-monoliths') {
+project(':main') {
     apply plugin: 'org.springframework.boot'
 
     dependencies {
-        compile project(':auth')
-        compile project(':order')
+        compile project(':user')
+        compile project(':admin')
+        compile project(':school')
+        compile project(':application')
+        compile project(':status')
 
         implementation 'org.springframework.boot:spring-boot-starter-web'
         testImplementation('org.springframework.boot:spring-boot-starter-test') {
@@ -104,5 +74,68 @@ project(':modular-monoliths') {
         }
 
         developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    }
+}
+
+project(':common') {
+    dependencies {
+        compile 'org.springframework:spring-context'
+        compile 'org.springframework:spring-context-support'
+        compile 'org.springframework.boot:spring-boot-starter-web'
+    }
+}
+
+project(':user') {
+    dependencies {
+        compile project(':common')
+
+        testImplementation('org.springframework.boot:spring-boot-starter-test') {
+            exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+        }
+        testImplementation 'org.springframework.security:spring-security-test'
+    }
+}
+
+project(':admin') {
+    dependencies {
+        compile project(':common')
+
+        testImplementation('org.springframework.boot:spring-boot-starter-test') {
+            exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+        }
+        testImplementation 'org.springframework.security:spring-security-test'
+    }
+}
+
+project(':school') {
+    dependencies {
+        compile project(':common')
+
+        testImplementation('org.springframework.boot:spring-boot-starter-test') {
+            exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+        }
+        testImplementation 'org.springframework.security:spring-security-test'
+    }
+}
+
+project(':application') {
+    dependencies {
+        compile project(':common')
+
+        testImplementation('org.springframework.boot:spring-boot-starter-test') {
+            exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+        }
+        testImplementation 'org.springframework.security:spring-security-test'
+    }
+}
+
+project(':status') {
+    dependencies {
+        compile project(':common')
+
+        testImplementation('org.springframework.boot:spring-boot-starter-test') {
+            exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+        }
+        testImplementation 'org.springframework.security:spring-security-test'
     }
 }

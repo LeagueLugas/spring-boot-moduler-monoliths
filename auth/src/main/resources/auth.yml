@@ -1,4 +1,0 @@
-monoliths:
-  catalogs:
-    info:
-      name: 'Auth Module'

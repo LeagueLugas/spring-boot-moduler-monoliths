@@ -1,4 +1,4 @@
-rootProject.name = 'multi-project-test'
+rootProject.name = 'munchkin'
 
-include 'modular-monoliths'
-include 'common', 'auth', 'order'
+include 'main'
+include 'common', 'user', 'admin', 'school', 'application', 'status'
