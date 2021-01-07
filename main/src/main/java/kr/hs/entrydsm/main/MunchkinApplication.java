@@ -8,6 +8,8 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.ComponentScan;
 
+import java.math.MathContext;
+
 @SpringBootConfiguration
 @EnableAutoConfiguration
 @ComponentScan(basePackages = "kr.hs.entrydsm.main.integrate")
