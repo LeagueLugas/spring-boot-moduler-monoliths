@@ -1,6 +1,6 @@
 package kr.hs.entrydsm.main;
 
-import kr.hs.entrydsm.main.confniguration.MunchkinApplicationBuilder;
+import kr.hs.entrydsm.main.configuration.MunchkinApplicationBuilder;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

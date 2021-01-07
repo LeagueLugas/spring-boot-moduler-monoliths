@@ -1,4 +1,4 @@
-package kr.hs.entrydsm.main.confniguration;
+package kr.hs.entrydsm.main.configuration;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

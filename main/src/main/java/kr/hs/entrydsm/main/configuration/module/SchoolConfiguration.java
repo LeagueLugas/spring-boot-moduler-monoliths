@@ -1,5 +1,6 @@
-package kr.hs.entrydsm.main.confniguration;
+package kr.hs.entrydsm.main.configuration.module;
 
+import kr.hs.entrydsm.main.configuration.DependentModule;
 import kr.hs.entrydsm.school.EnableSchoolModule;
 
 @EnableSchoolModule

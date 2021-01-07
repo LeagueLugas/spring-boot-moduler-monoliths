@@ -1,16 +1,14 @@
-package kr.hs.entrydsm.main.confniguration;
+package kr.hs.entrydsm.main.configuration;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
 import java.util.Objects;
 
-@Configuration
 @RequiredArgsConstructor
 @EnableAutoConfiguration
 public class WebApplicationConfigure {

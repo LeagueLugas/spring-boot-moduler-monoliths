@@ -1,4 +1,4 @@
-package kr.hs.entrydsm.main.confniguration;
+package kr.hs.entrydsm.main.configuration.module;
 
 import kr.hs.entrydsm.user.EnableUserModule;
 
