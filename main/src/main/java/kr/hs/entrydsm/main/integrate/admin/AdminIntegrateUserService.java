@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @Lazy
 @Component
-public class AdminIntegrateApplicantService implements ApplicantRepository {
+public class AdminIntegrateUserService implements ApplicantRepository {
 
     private final UserExportRepository userExportRepository;
 

@@ -6,6 +6,7 @@ import kr.hs.entrydsm.notification.EnableNotificationModule;
 import kr.hs.entrydsm.school.EnableSchoolModule;
 import kr.hs.entrydsm.score.EnableScoreModule;
 import kr.hs.entrydsm.user.EnableUserModule;
+import org.springframework.context.annotation.Import;
 
 public class ContextConfiguration {
 
@@ -16,10 +17,12 @@ public class ContextConfiguration {
     }
 
     @EnableAdminModule
+    @DependentModule(User.class)
     public static class Admin {
     }
 
     @EnableNotificationModule
+    @DependentModule(Admin.class)
     public static class Notification {
 
     }
@@ -36,7 +39,7 @@ public class ContextConfiguration {
     public static class School {
     }
 
-    @EnableWebApplication
+    @Import(WebApplicationConfigure.class)
     public static class Web {
     }
 
