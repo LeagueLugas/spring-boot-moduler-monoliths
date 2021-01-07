@@ -29,9 +29,9 @@ public class MunchkinApplicationBuilder {
     }
 
     public void registerModules() {
-        registerDependency(ContextConfiguration.Notification.class);
+        registerDependency(NotificationConfiguration.class);
 
-        springBuilder = springBuilder.sibling(ContextConfiguration.Web.class).web(WebApplicationType.SERVLET);
+        springBuilder = springBuilder.sibling(WebApplicationConfigure.class).web(WebApplicationType.SERVLET);
     }
 
     private void registerDependency(Class<?> module) {
