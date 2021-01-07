@@ -1,4 +1,4 @@
-package kr.hs.entrydsm.admin;
+package kr.hs.entrydsm.score;
 
 import kr.hs.entrydsm.common.context.beans.ModuleInitializePriority;
 import org.springframework.context.annotation.ComponentScan;
@@ -9,8 +9,8 @@ import java.lang.annotation.*;
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@ModuleInitializePriority(2)
-@ComponentScan(basePackageClasses = AdminModuleConfiguration.class)
-@Import(AdminModuleConfiguration.class)
-public @interface EnableAdminModule {
+@ModuleInitializePriority(3)
+@ComponentScan(basePackageClasses = ScoreModuleConfiguration.class)
+@Import(ScoreModuleConfiguration.class)
+public @interface EnableScoreModule {
 }

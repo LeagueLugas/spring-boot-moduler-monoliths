@@ -11,12 +11,11 @@ import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.core.type.AnnotatedTypeMetadata;
 import org.springframework.util.ClassUtils;
 
-import java.lang.annotation.Annotation;
 import java.util.Objects;
 
 public class PublishedComponentRegisteringPostProcessor implements BeanPostProcessor {
 
-    private static final Class<?> publishedAnnotation = Published.class;
+    private static final Class<Published> publishedAnnotation = Published.class;
 
     private final ConfigurableListableBeanFactory beanFactory;
     private final ConfigurableListableBeanFactory parentBeanFactory;
@@ -64,12 +63,12 @@ public class PublishedComponentRegisteringPostProcessor implements BeanPostProce
         return bean;
     }
 
-    private <A extends Annotation> boolean hasAnnotation(Object bean) {
+    private boolean hasAnnotation(Object bean) {
         Class<?> beanClass = ClassUtils.getUserClass(bean);
         if (AopUtils.isAopProxy(bean)) {
             beanClass = AopUtils.getTargetClass(bean);
         }
-        return AnnotationUtils.findAnnotation(beanClass, publishedAnnotation.asSubclass(Annotation.class)) != null;
+        return AnnotationUtils.findAnnotation(beanClass, publishedAnnotation) != null;
     }
 
 }

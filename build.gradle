@@ -64,9 +64,10 @@ project(':main') {
     dependencies {
         compile project(':user')
         compile project(':admin')
-        compile project(':school')
+        compile project(':notification')
         compile project(':application')
-        compile project(':status')
+        compile project(':score')
+        compile project(':school')
 
         implementation 'org.springframework.boot:spring-boot-starter-web'
         testImplementation('org.springframework.boot:spring-boot-starter-test') {
@@ -107,7 +108,7 @@ project(':admin') {
     }
 }
 
-project(':school') {
+project(':notification') {
     dependencies {
         compile project(':common')
 
@@ -129,7 +130,18 @@ project(':application') {
     }
 }
 
-project(':status') {
+project(':score') {
+    dependencies {
+        compile project(':common')
+
+        testImplementation('org.springframework.boot:spring-boot-starter-test') {
+            exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+        }
+        testImplementation 'org.springframework.security:spring-security-test'
+    }
+}
+
+project(':school') {
     dependencies {
         compile project(':common')
 

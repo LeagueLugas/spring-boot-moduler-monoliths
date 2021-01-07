@@ -1,4 +1,7 @@
 rootProject.name = 'munchkin'
 
 include 'main'
-include 'common', 'user', 'admin', 'school', 'application', 'status'
+include 'common'
+include 'user'
+include 'admin', 'notification'
+include 'application', 'score', 'school'
